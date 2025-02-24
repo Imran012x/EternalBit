@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EternalBit</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f7ff;
+            overflow: hidden;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        /* App Bar */
+        .navbar {
+            background: #2a3d66;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: #ffd700;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #004b6d;
+            color: #fff;
+            position: relative;
+        }
+        header h1 {
+            font-size: 60px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+        header .eternal-bit {
+            font-size: 40px;
+            color: #ffd700;
+        }
+
+        /* Body Section */
+        .section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section div {
+            background-color: #fff;
+            width: 250px;
+            height: 300px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: 0.3s;
+            padding: 20px;
+        }
+        .section div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .section h3 {
+            font-size: 24px;
+            color: #2a3d66;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #004b6d;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Hover Effect for Drop Simulation */
+        body {
+            cursor: pointer;
+            background: linear-gradient(45deg, #67b7d1, #a7cfe8);
+        }
+        body:active {
+            background: #88c7d1;
+            transform: scale(1.02);
+            transition: background 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (App Bar) -->
+    <div class="navbar">
+        <a href="#">Services</a>
+        <a href="#">Sign Up</a>
+        <a href="#">About</a>
+    </div>
+
+    <!-- Header with Company Name -->
+    <header>
+        <h1><span class="eternal-bit">Eternal</span>Bit</h1>
+        <p>Your Future in Data & Network Services</p>
+    </header>
+
+    <!-- Body with 3 Sections -->
+    <div class="section">
+        <div>
+            <img src="https://customerthink.com/wp-content/uploads/mark-804938_1280-pixabay-customer-experience-service-1.jpg" alt="Service Image">
+            <h3>Service</h3>
+            <p>Providing top-notch services in data and network technology.</p>
+        </div>
+        <div>
+            <img src="https://miro.medium.com/v2/resize:fit:1200/0*SqZQI6jVDP21ynJh.jpg" alt="Network Image">
+            <h3>Network</h3>
+            <p>Building strong and secure networks for seamless connectivity.</p>
+        </div>
+        <div>
+            <img src="https://community.nasscom.in/sites/default/files/styles/960_x_600/public/media/images/DATA%20SCIENCE%20MODEL.jpg?itok=Uw9IQgUd" alt="Data Science Image">
+            <h3>Data Science</h3>
+            <p>Leveraging data to provide insights and intelligent solutions.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 EternalBit</p>
+        <p>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </p>
+    </footer>
+
+    <script>
+        document.body.addEventListener("mousedown", function(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+
+            let drop = document.createElement('div');
+            drop.style.position = 'absolute';
+            drop.style.top = `${y - 10}px`;
+            drop.style.left = `${x - 10}px`;
+            drop.style.width = '20px';
+            drop.style.height = '20px';
+            drop.style.borderRadius = '50%';
+            drop.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+            drop.style.animation = 'dropAnimation 0.5s forwards';
+
+            document.body.appendChild(drop);
+
+            setTimeout(() => {
+                drop.remove();
+            }, 500);
+        });
+
+        /* Water drop animation */
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes dropAnimation {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
